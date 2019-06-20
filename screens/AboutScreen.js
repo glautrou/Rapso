@@ -9,14 +9,15 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 type Props = {};
 const AboutScreen = class AboutScreen extends React.Component<Props> {
+  static navigationOptions = {
+    headerTitle: "About",
+    headerRight: <Text>1.0</Text>
+  };
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
+        <Text>About Screen</Text>
         <Button title="Sign out" onPress={this.signOutAsync} />
       </View>
     );

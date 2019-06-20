@@ -25,10 +25,14 @@ const DevicesStack = createStackNavigator({
   Devices: DevicesScreen
 });
 
+const AboutStack = createStackNavigator({
+  About: AboutScreen
+});
+
 const AppStack = createBottomTabNavigator({
   Home: HomeStack,
   Devices: DevicesStack,
-  About: AboutScreen
+  About: AboutStack
 });
 
 const RootStack = createSwitchNavigator(
