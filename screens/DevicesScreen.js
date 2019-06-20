@@ -7,7 +7,7 @@ import React, { Component } from "react";
 import { Text, View, Button } from "react-native";
 
 type Props = {};
-const DevicesScreen = class AboutScreen extends React.Component<Props> {
+const DevicesScreen = class DevicesScreen extends React.Component<Props> {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
