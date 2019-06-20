@@ -21,6 +21,10 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class HomeScreen extends React.Component<Props> {
+  static navigationOptions = {
+    header: null
+  };
+
   render() {
     return (
       <View style={styles.container}>
