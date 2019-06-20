@@ -18,8 +18,7 @@ const AuthStack = createStackNavigator({
 });
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-  About: AboutScreen
+  Home: HomeScreen
 });
 
 const DevicesStack = createStackNavigator({
@@ -28,7 +27,8 @@ const DevicesStack = createStackNavigator({
 
 const AppStack = createBottomTabNavigator({
   Home: HomeStack,
-  Devices: DevicesStack
+  Devices: DevicesStack,
+  About: AboutScreen
 });
 
 const RootStack = createSwitchNavigator(
