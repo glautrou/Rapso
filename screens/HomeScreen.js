@@ -11,6 +11,7 @@ import {
   StackActions,
   NavigationActions
 } from "react-navigation";
+import AsyncStorage from "@react-native-community/async-storage";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -31,6 +32,7 @@ export default class HomeScreen extends React.Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <Button title="Sign out!" onPress={this.signOutAsync} />
         <Button
           title="Go to About"
           onPress={() => this.props.navigation.navigate("About")}
@@ -38,6 +40,11 @@ export default class HomeScreen extends React.Component<Props> {
       </View>
     );
   }
+
+  signOutAsync = async () => {
+    await AsyncStorage.removeItem("userToken");
+    this.props.navigation.navigate("Auth");
+  };
 }
 
 const styles = StyleSheet.create({
