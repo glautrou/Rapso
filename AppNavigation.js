@@ -5,13 +5,15 @@ import {
   createBottomTabNavigator,
   StackActions,
   NavigationActions
-} from "react-navigation";
+} from 'react-navigation';
 
-import AuthLoadingScreen from "./screens/AuthLoadingScreen";
-import AuthScreen from "./screens/AuthScreen";
-import HomeScreen from "./screens/HomeScreen";
-import AboutScreen from "./screens/AboutScreen";
-import DevicesScreen from "./screens/DevicesScreen";
+import AuthLoadingScreen from './screens/AuthLoadingScreen';
+import AuthScreen from './screens/AuthScreen';
+import HomeScreen from './screens/HomeScreen';
+import SearchEngineScreen from './screens/SearchEngineScreen';
+import SearchResultScreen from './screens/SearchResultScreen';
+import AboutScreen from './screens/AboutScreen';
+import DevicesScreen from './screens/DevicesScreen';
 
 const AuthStack = createStackNavigator({
   Auth: AuthScreen
@@ -19,6 +21,11 @@ const AuthStack = createStackNavigator({
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
+});
+
+const SearchStack = createStackNavigator({
+  SearchEngine: SearchEngineScreen,
+  SearchResult: SearchResultScreen
 });
 
 const DevicesStack = createStackNavigator({
@@ -31,6 +38,7 @@ const AboutStack = createStackNavigator({
 
 const AppStack = createBottomTabNavigator({
   Home: HomeStack,
+  Search: SearchStack,
   Devices: DevicesStack,
   About: AboutStack
 });
@@ -42,7 +50,7 @@ const RootStack = createSwitchNavigator(
     App: AppStack
   },
   {
-    initialRouteName: "AuthLoading"
+    initialRouteName: 'AuthLoading'
   }
 );
 
